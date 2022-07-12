@@ -1,0 +1,135 @@
+/* * {
+  margin: 0px;
+  padding: 0px;
+}
+.container1 {
+  display: inline;
+  height: 100vh;
+  background-color: gray;
+}
+.sidebar {
+  position: absolute;
+  width: 448px;
+  height: 100vh;
+  left: 0px;
+  background: #364153;
+}
+
+.sidePadding {
+  position: absolute;
+  width: 354px;
+  height: 58px;
+  top: 70px;
+  margin-left: 40px;
+  background: #364153;
+}
+
+.sidePadding h2,
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25.63px;
+  line-height: 33px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.Formcls {
+  margin-left: 50px;
+  margin-top: 200px;
+  line-height: 30px;
+}
+
+.Formcls label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 21px;
+  color: #ffffff;
+}
+
+.Formcls input {
+  height: 40px;
+  width: 348px;
+  border-radius: 7px;
+  border: none;
+  background-color: #1a202c;
+  color: #ffffff;
+  text-indent: 20px;
+  opacity: 0.7;
+}
+.cont2 {
+  padding-top: 20px;
+}
+.chk1 {
+  display: flex;
+}
+
+.chk1 input {
+  height: 15px;
+  width: 15px;
+  left: 50px;
+  top: 747px;
+  opacity: 0.5;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+} */
+/* .chk1 label {
+  margin-left: 10px;
+  width: 350px;
+  font-weight: 500;
+  font-size: 13.5px;
+  line-height: 21px;
+  
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+}
+.btn1 {
+  padding-top: 20px;
+}
+.btn1 button {
+  width: 348px;
+  height: 50px;
+  left: 50px;
+  top: 817px;
+  cursor: pointer;
+  border: none;
+
+  background: #605cff;
+  border-radius: 10px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.lastline h6 {
+  width: 244px;
+  height: 21px;
+  left: 102px;
+  top: 897px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+  padding-top: 20px;
+  margin-left: 60px;
+}
+.sidebar{
+  color: red;
+  display: flex;
+} */
+
+.grd1 {
+  display: inline-block;
+}
+.txt1 {
+  height: 30px;
+}

@@ -1,0 +1,44 @@
+.setBackground {
+    position: absolute;
+    width: 558px;
+    height: 558px;
+    left: 450px;
+    top: 60px;
+    border-radius: 10px;
+  }
+  .bulkord {
+    padding-top: 100px;
+    width: 354px;
+    height: 58px;
+    /* left: 477px; */
+    /* top: 396px; */
+  
+    /* H2 */
+    text-align: center;
+  
+    font-style: normal;
+    font-size: 25.63px;
+    line-height: 33px;
+  
+    color: #ffffff;
+  }
+  
+  .txtfild {
+    margin-left: 28px;
+    border-radius: 10px;
+    width: 502px;
+    background: #1a202c;
+  }
+  .btn {
+    width: 502px;
+    height: 50px;
+    margin-left: 28px;
+    /* left: 469px;
+  top: 678px; */
+  
+    /* Dark Version/Primary */
+  
+    background: #605cff;
+    border-radius: 10px;
+  }
+  
