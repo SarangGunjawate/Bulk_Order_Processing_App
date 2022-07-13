@@ -80,7 +80,7 @@ function Stores() {
   //Pagination ----------------------------------------------||-----------------------------------
 
   const pageNumber = [];
-  const [row, setRow] = useState(5);
+  const [row, setRow] = useState(10);
   console.log(row);
   const postPerPage = row;
   const [number, setNumber] = useState(1); // No of pages

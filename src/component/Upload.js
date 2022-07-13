@@ -51,7 +51,7 @@ class Upload extends Component {
           sx={{ mt: 1, input: { color: "#FFFFFF" } }}
         >
           <TextField
-            style={{ backgroundColor: "#639194" }}
+            style={{ backgroundColor: "#1A202C", marginLeft: '10px', borderRadius: '8px', color: 'red' }}
             type="file"
             id="image"
             accept="image/png, image/jpeg"
@@ -59,7 +59,7 @@ class Upload extends Component {
             required
           />
 
-          <TextField style={{ backgroundColor: "#727cc4" }} type="submit" />
+          <TextField style={{ backgroundColor: "#364153", marginLeft: '10px', borderRadius: '8px' }} type="submit" value='Upload' />
         </Box>
       </div>
     );

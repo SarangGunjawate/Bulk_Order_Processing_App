@@ -83,7 +83,7 @@ export default function BasicTable(props) {
     console.log(options);
     function getAllStudents() {
       try {
-        fetch("http://192.168.0.101:5000/users", options).then((result) => {
+        fetch("http://api.binaryhat.com/users", options).then((result) => {
           result.json().then((resp) => {
             setUser(resp.data.users);
             setSearchapiData(resp.data.users);
@@ -286,8 +286,8 @@ export default function BasicTable(props) {
                   {obj.phone_number}
                 </TableCell>
                 <TableCell style={{ color: "white" }} align="right">
-                <img src='/img/sarang.jpg' height='60' width='60' />
-                <img src={"http://192.168.0.101:5000/" + obj.user_image} />
+                {/* <img src='/img/sarang.jpg' height='60' width='60' /> */}
+                <img src={obj.user_image} />
                 </TableCell>
                 <TableCell style={{ color: "white" }} align="right">
                   {obj.created_at}
