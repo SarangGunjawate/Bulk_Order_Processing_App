@@ -96,7 +96,7 @@ function Login() {
         //get msgs...............................
         if (result.status === "success") {
           setEmailErr(result.message);
-          //navigate('/Users')
+          navigate('/Navbar')
         } else {
           setStatusmsg(result.error.message);
         }
