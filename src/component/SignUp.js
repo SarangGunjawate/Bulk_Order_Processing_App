@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
@@ -10,10 +10,13 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const theme = createTheme();
 
 function SignUp() {
+
   const signpadd = { paddingTop: 25 };
   const chk1 = { fontSize: 13 };
   const Links = { cursor: "pointer", color: "#5b55cf", textDecoration: "none" };
@@ -41,6 +44,18 @@ function SignUp() {
   const [passMsg, setPassmsg] = useState("");
   const [success, setSuccess] = useState("");
   const [regErr, setRegErr] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+
+    if(localStorage.getItem('access_token')){
+      // navigate('/SignUp')
+    }
+    else{
+      navigate('/Login')
+    }
+  }, [])
+
 
   function saveUser(e) {
     e.preventDefault();

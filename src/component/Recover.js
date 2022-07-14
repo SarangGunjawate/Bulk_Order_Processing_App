@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import "./Recover.css";
 import Button from "@mui/material/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {  useNavigate } from "react-router-dom";
 import { Cookies, useCookies } from "react-cookie";
 
@@ -30,6 +30,15 @@ function Recover() {
   const navigate = useNavigate();
   const [cookies, setCookie] = useCookies([]);
 
+  useEffect(() => {
+
+    if(localStorage.getItem('access_token')){
+      navigate('/Recover')
+    }
+    else{
+      navigate('/Login')
+    }
+  }, [])
 
 
   function resetPassword(event) {

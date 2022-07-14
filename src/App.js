@@ -33,6 +33,7 @@ function App() {
             <Route path="/Upload" element={<Upload />} />
             {/* <Route path="/" element={<Navbar />} /> */}
             <Route path="/Navbar" element={<Navbar />} />
+            {/* <Route path="/" element={<Navbar />} /> */}
           </Routes>
         </Router>
       </div>

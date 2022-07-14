@@ -16,16 +16,29 @@ import Modal from "@mui/material/Modal";
 import MenuItem from "@mui/material/MenuItem";
 import { ButtonGroup } from "@mui/material";
 import Select from "@mui/material/Select";
+import { Link, useNavigate } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
+
 
 
 function Stores() {
   const [store, setStore] = useState([]);
   const [filter_data, setFilter] = useState("");
 
+  // const history = useHistory()
+  const navigate = useNavigate();
+
   
   //Get Store----------------------------------------------------------||--------------------------------------------
-
   useEffect(() => {
+
+    if(localStorage.getItem('access_token')){
+      // navigate('/Navbar')
+    }
+    else{
+      navigate('/Login')
+    }
+
     //let token = request.get(token);
     const options = {
       headers: {
@@ -180,6 +193,7 @@ function Stores() {
         <Select
           // style={{ width: 100, height: 40 }}
           // value={row}
+          defaultValue="" 
           onChange={(e) => setRow(e.target.value)}
         >
           

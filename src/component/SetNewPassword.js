@@ -7,14 +7,13 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import "./Recover.css";
 import Button from "@mui/material/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cookies, useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 const eye = <FontAwesomeIcon icon={faEye} />;
-//const eye1 = <FontAwesomeIcon icon={faEye} />;
 
 const theme = createTheme();
 
@@ -35,6 +34,16 @@ function SetNewPassword() {
   const [code1, setCode] = useState("");
   const [confPasserr, setConFPassErr] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+
+    if(localStorage.getItem('access_token')){
+      navigate('/SetNewPassword')
+    }
+    else{
+      navigate('/Login')
+    }
+  }, [])
 
   let uuid = localStorage.getItem("uuid");
   let otp1 = localStorage.getItem("otp");

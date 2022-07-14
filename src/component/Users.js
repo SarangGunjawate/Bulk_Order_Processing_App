@@ -12,10 +12,12 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { Link, useNavigate } from "react-router-dom";
 //import SimpleDialog from '@mui/material/SimpleDialog';
 import Modal from "@mui/material/Modal";
 
 import './Users.css'
+import Navbar from "./Navbar";
 
 export default function BasicTable(props) {
 
@@ -33,6 +35,7 @@ export default function BasicTable(props) {
   const [user, setUser] = useState([]);
   const [fullname, setFullname] = useState("");
   const [username, setUsername] = useState("");
+  const navigate = useNavigate();
 
   const [userId, setUserId] = useState(null);
   // const [success, setSuccess] = useState("");
@@ -73,6 +76,14 @@ export default function BasicTable(props) {
   //Get_User_Call ----------------------------------------||------------------------------------------
 
   useEffect(() => {
+    
+    if(localStorage.getItem('access_token')){
+      // navigate('/Users')
+    }
+    else{
+      navigate('/Login')
+    }
+
     //let token = request.get(token);
     const options = {
       headers: {

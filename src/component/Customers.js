@@ -17,13 +17,21 @@ import Modal from "@mui/material/Modal";
 import Pagination from "@mui/material/Pagination";
 import MenuItem from "@mui/material/MenuItem";
 import TablePagination from "@mui/material/TablePagination";
+import { useNavigate } from "react-router-dom";
 //import Pagination from "react-js-pagination";
 
 function Stores() {
   const [customer, setCustomer] = useState([]);
   const [filter_data, setFilter] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
+    if(localStorage.getItem('access_token')){
+      // navigate('/Navbar')
+    }
+    else{
+      navigate('/Login')
+    }
     //let token = request.get(token);
     const options = {
       headers: {

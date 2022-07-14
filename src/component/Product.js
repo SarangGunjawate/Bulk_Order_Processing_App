@@ -18,12 +18,20 @@ import Pagination from "@mui/material/Pagination";
 import MenuItem from "@mui/material/MenuItem";
 import TablePagination from "@mui/material/TablePagination";
 import FormControl from "@mui/material/FormControl";
+import { useNavigate } from "react-router-dom";
 
 function Product() {
   const [Product, setProduct] = useState([]);
   const [filter_data, setFilter] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
+    if(localStorage.getItem('access_token')){
+      // navigate('/Navbar')
+    }
+    else{
+      navigate('/Login')
+    }
     //let token = request.get(token);
     const options = {
       headers: {

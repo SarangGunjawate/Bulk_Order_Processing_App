@@ -9,7 +9,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DrawerComponent from "./DrawerComponent";
 import Home from "./Home";
 import Users from "./Users";
@@ -38,6 +38,17 @@ function Navbar() {
   //   "Upload",
   //   "Logout"
   // ];
+
+
+  useEffect(() => {
+
+    if(localStorage.getItem('access_token')){
+      navigate('/Navbar')
+    }
+    else{
+      navigate('/Login')
+    }
+  }, [])
 
   const logout = (e) => {
     e.preventDefault();

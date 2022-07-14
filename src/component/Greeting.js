@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -19,6 +19,20 @@ import TextareaAutosize from "@mui/material/TextareaAutosize";
 const theme = createTheme();
 
 function Greeting() {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+
+    if(localStorage.getItem('access_token')){
+      navigate('/Greeting')
+    }
+    else{
+      navigate('/Login')
+    }
+  }, [])
+
+
   const [greeting, setGreeting] = React.useState("");
 
   const handleChange = (event) => {
