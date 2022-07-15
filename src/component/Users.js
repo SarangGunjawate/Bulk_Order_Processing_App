@@ -33,6 +33,7 @@ export default function BasicTable(props) {
     marginRight: 15,
   };
   const [user, setUser] = useState([]);
+  // console.log('uuuuuuuuuuuu',user)
   const [fullname, setFullname] = useState("");
   const [username, setUsername] = useState("");
   const navigate = useNavigate();
@@ -161,11 +162,11 @@ export default function BasicTable(props) {
   const selectUser = (id) => {
     //console.log(id);
     setOpen1(true);
-    console.warn(user[id - 1]);
-    let item = user[id - 1];
-    setFullname(item.fullname);
-    setUsername(item.username);
-    setUserId(item.id);
+    let item = user.filter(update => update.id == id)
+    console.log('aaaaaaaaaaaaa',item);
+    setFullname(item[0].fullname);
+    setUsername(item[0].username);
+    // setUserId(item.id);
 
     // //console.log(user);
     // console.warn('selected user: ', user[id - 1]);
@@ -225,18 +226,20 @@ export default function BasicTable(props) {
   const [UpdatedAt, setUpdatedAt] = useState("");
   const [roles, setRoles] = useState("");
   const [open, setOpen] = useState(false);
+  
   const handleOpen = (id) => {
+    let item = user.filter(userView => userView.id == id)
+    console.log('aaaaaaaaaaaaa',item);
     setOpen(true);
-    console.warn(user[id - 1]);
-    let item = user[id - 1];
-    setFullname(item.fullname);
-    setUsername(item.username);
-    setPhoneno(item.phone_number);
-    setUimage(item.user_image);
-    setCreatedAt(item.created_at);
-    setUpdatedAt(item.updated_at);
-    setRoles(item.roles);
-    setUserId(item.id);
+    
+    setFullname(item[0].fullname);
+    setUsername(item[0].username);
+    setPhoneno(item[0].phone_number);
+    setUimage(item[0].user_image);
+    setCreatedAt(item[0].created_at);
+    setUpdatedAt(item[0].updated_at);
+    setRoles(item[0].roles);
+    setUserId(item[0].id);
   };
   const handleClose = () => setOpen(false);
 
@@ -258,7 +261,7 @@ export default function BasicTable(props) {
         <TableHead>
           <TableRow
             className="setCss"
-            style={{ backgroundColor: "#344869", height: 75 }}
+            style={{ backgroundColor: "#344869" }}
           >
             <TableCell align="right">ID</TableCell>
             <TableCell align="right">Full_Name</TableCell>
@@ -277,13 +280,10 @@ export default function BasicTable(props) {
           {user.map((obj, i) => {
             return (
               <TableRow
-                style={{ color: "red" }}
                 key={obj.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                {/* <TableCell component="th" scope="row">
-                {obj.id}
-              </TableCell> */}
+                
                 <TableCell style={{ color: "white" }} align="right">
                   {obj.id}
                 </TableCell>
@@ -352,6 +352,7 @@ export default function BasicTable(props) {
                       cursor: "pointer",
                     }}
                     type="button"
+                    // onChange={() => setId()}
                     // onClick={()=> viewUser(obj.id)}
                     onClick={() => handleOpen(obj.id)}
                   >
