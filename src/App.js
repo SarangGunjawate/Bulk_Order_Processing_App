@@ -12,6 +12,7 @@ import Greeting from "./component/Greeting";
 import Product from "./component/Product";
 import Upload from "./component/Upload";
 import Navbar from "./component/Navbar";
+import NavigationManager from "./component/Navigation/NavigationManager";
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
             <Route path="/Upload" element={<Upload />} />
             {/* <Route path="/" element={<Navbar />} /> */}
             <Route path="/Navbar" element={<Navbar />} />
-            {/* <Route path="/" element={<Navbar />} /> */}
+            <Route path="/NavigationManager" element={<NavigationManager />} />
           </Routes>
         </Router>
       </div>
