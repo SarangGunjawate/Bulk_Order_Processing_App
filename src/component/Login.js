@@ -337,7 +337,6 @@ function Login() {
 
                 <b style={{ color: "white" }}>{statusMsg}</b>
                 <b style={{ color: "white" }}>{emailErr}</b>
-                <Link to="/Users">Users</Link>
               </Box>
             </Grid>
             <Grid

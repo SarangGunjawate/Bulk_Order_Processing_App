@@ -1,11 +1,12 @@
 import {
-  
+  Avatar,
   List,
   ListItem,
   ListItemButton,
   ListItemIcon,
   ListItemText,
   Typography,
+  IconButton,
 } from "@mui/material";
 import Box from "@mui/material/Box";
 import React from "react";
@@ -19,6 +20,9 @@ import ActivitySVG from '../SVG/Activity'
 import NotificationSVG from '../SVG/Notification'
 import SettingsSVG from '../SVG/Settings'
 import MuiDrawer from '@mui/material/Drawer';
+import LogoutIcon from '@mui/icons-material/Logout';
+import {logout} from '../Utils/Helper'
+
 
 
 import { useNavigate, Outlet, useLocation } from "react-router-dom";
@@ -108,6 +112,24 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 1),
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
+}));
+
+const DrawerFooter = styled('div', {
+  shouldForwardProp: (prop) => prop !== 'open',
+})(({ theme, open }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-around',
+  padding: theme.spacing(0, 1),
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+
+  ...(open && {
+    flexDirection: 'row',
+  }),
+  ...(!open && {
+    flexDirection: 'column',
+  }),
 }));
 
 
@@ -215,9 +237,37 @@ export default function NavigationManager() {
               </ListItem>
             ))}
           </List>
+          <DrawerFooter open={open} sx={{marginTop: '100px'}}>
+          <Avatar alt='avatar image' 
+          // src={user?.image} 
+          />
+          {open && <Box component={'span'}>
+            {/* {user.username} */}
+            </Box>}
+          {open && (
+            <IconButton
+            title='Logout User'
+              onClick={() => {
+                logout();
+                window.location = '/Login';
+              }}
+            >
+              <LogoutIcon sx={{ width: '1.5rem', height: '1.5rem' }} />
+            </IconButton>
+          )}
+        </DrawerFooter>
           <Outlet />
         </Box>
       </Drawer>
+      <Box
+        component='main'
+        sx={{
+          marginLeft: open ? `${drawerWidth}px` : `65px`,
+          width: `calc(100% - ${open ? `${drawerWidth}px` : `65px`})`,
+          height: '100vh',
+          backgroundColor: '#1A202C',
+        }}
+      ></Box>
     </>
   );
 }

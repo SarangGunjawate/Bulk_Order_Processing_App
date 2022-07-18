@@ -18,6 +18,7 @@ import Pagination from "@mui/material/Pagination";
 import MenuItem from "@mui/material/MenuItem";
 import TablePagination from "@mui/material/TablePagination";
 import { useNavigate } from "react-router-dom";
+import NavigationManager from '../component/Navigation/NavigationManager'
 //import Pagination from "react-js-pagination";
 
 function Stores() {
@@ -26,12 +27,12 @@ function Stores() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(localStorage.getItem('access_token')){
-      // navigate('/Navbar')
-    }
-    else{
-      navigate('/Login')
-    }
+    // if(localStorage.getItem('access_token')){
+    //   // navigate('/Navbar')
+    // }
+    // else{
+    //   navigate('/Login')
+    // }
     //let token = request.get(token);
     const options = {
       headers: {
@@ -109,7 +110,12 @@ function Stores() {
   };
 
   return (
-    <TableContainer component={Paper} style={{ backgroundColor: "#1A202C" }}>
+    <>
+    <div style={{position:'absolute'}}>
+      <NavigationManager />
+      </div>
+      <TableContainer component={Paper} style={{ backgroundColor: "#1A202C", position: 'relative' }}>
+      
       <input
         style={inp}
         type="text"
@@ -231,6 +237,7 @@ function Stores() {
         </Button>
       </ButtonGroup>
     </TableContainer>
+    </>
   );
 }
 
